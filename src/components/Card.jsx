@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import {useNavigate} from 'react-router-dom';
 import axios from 'axios'
 import TypeCard from './TypeCard'
 import pokeball from '../assets/pokeball.png'
 
 export default function Card({ data }) {
+  const navigate = useNavigate();
   const [pokemonContent, setPokemonContent] = useState({});
   const [color, setColor] = useState('')
 
@@ -36,7 +38,7 @@ export default function Card({ data }) {
   }, [pokemonContent])
   
   return (
-    <div id='card-container' >
+    <div id='card-container' onClick={() => navigate(`/detail/${pokemonContent.id}`)} >
       <div id='card' className='rounded-lg px-2 m-2' style={{ backgroundImage: `url(${pokeball})`, backgroundRepeat: 'no-repeat', backgroundSize: 180, backgroundPosition: '150% 220%', backgroundColor:color }}>
         <div id='poke-id' className='flex justify-end mr-4 pt-4'>
           <h1 className='font-bold' style={{color: textColor}}># {pokemonContent.id}</h1>

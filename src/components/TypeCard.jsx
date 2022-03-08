@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function TypeCard({ data }) {
-  console.log(data[1]);
   const textColor = data[1] === 'white' ? 'black' : 'white'
   return (
     <div id="type" className='my-2'>

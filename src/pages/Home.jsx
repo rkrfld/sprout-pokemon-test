@@ -32,7 +32,9 @@ export default function Home() {
       <div className='grid grid-cols-3'>
         {pokemon.map((el, i) => {
           return (
-            <Card key={i} data={el} />
+            <div>
+              <Card key={i} data={el} />
+            </div>
           )
         })}
       </div>
