@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Outlet, useParams, Link } from 'react-router-dom'
+import { FaArrowLeft } from 'react-icons/fa';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 import TypeCard from '../components/TypeCard';
 
 export default function Detail() {
+  const navigate = useNavigate();
   const { id } = useParams()
   const [detail, setDetail] = useState();
   const [color, setColor] = useState('')
@@ -38,6 +41,9 @@ export default function Detail() {
     <div className='flex justify-center pt-10 rounded-md'>
       <div className='flex-col border-2'>
         <div className='flex flex-col justify-center z-0  px-4' style={{ backgroundColor: color }}>
+          <div className='mt-5 cursor-pointer' onClick={() => navigate('/')}>
+            <FaArrowLeft size={20} color='black'/>
+          </div>
           <div id="header" className='flex justify-between items-center'>
             <div id="name-type" className='flex flex-col items-start'>
               <div id="name" className='my-2 mx-1 capitalize font-bold text-4xl' style={{ color: textColor }}>
