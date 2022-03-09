@@ -38,7 +38,7 @@ export default function Card({ data }) {
   }, [pokemonContent])
   
   return (
-    <div id='card-container' onClick={() => navigate(`/detail/${pokemonContent.id}`)} >
+    <div className='cursor-pointer' id='card-container' onClick={() => navigate(`/detail/${pokemonContent.id}/`)} >
       <div id='card' className='rounded-lg px-2 m-2' style={{ backgroundImage: `url(${pokeball})`, backgroundRepeat: 'no-repeat', backgroundSize: 180, backgroundPosition: '150% 220%', backgroundColor:color }}>
         <div id='poke-id' className='flex justify-end mr-4 pt-4'>
           <h1 className='font-bold' style={{color: textColor}}># {pokemonContent.id}</h1>
@@ -57,8 +57,8 @@ export default function Card({ data }) {
               }) : null}
             </div>
           </div>
-          <div id="poke-img" className='bg-contain bg-center' style={{ backgroundImage: `url(${pokemonContent.sprites !== undefined ? pokemonContent.sprites.other.home.front_default : null})`, width: 150, height: 150, backgroundRepeat: 'no-repeat', }}>
-          </div>
+          <div id="poke-img" className='bg-contain bg-center' style={{ backgroundImage: `url(${pokemonContent.sprites !== undefined ? pokemonContent.sprites.other.home.front_default : null})`, width: 150, height: 150, backgroundRepeat: 'no-repeat', }} />
+
         </div>
       </div>
     </div>
